@@ -65,7 +65,9 @@ class SwiftContainer extends SwiftEntity {
                 }
             }).on('error', err => {
                 reject(err);
-            }).on('end', response => {
+            }).on('response', response => {
+            var response = response;
+            }).on('end', () => {
                 resolve(response);
             }).pipe(stream);
         }));
