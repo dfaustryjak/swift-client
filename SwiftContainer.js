@@ -20,9 +20,9 @@ class SwiftContainer extends SwiftEntity {
                 reject(err);
             }).on('response', response => {
                 if (response.statusCode === 201) {
-                    resolve();
+                    resolve(response);
                 } else {
-                    reject(new Error(`HTTP ${response.statusCode}`));
+                    reject(new Error(`HTTP ${response}`));
                 }
             });
 
